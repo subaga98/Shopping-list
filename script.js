@@ -66,8 +66,13 @@ function checkUI() {
   }
 }
 
+function onFocus() {
+  itemInput.style.outline = '2px solid #ade8f4';
+}
+
 // Event Listeners
 itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', onClickClear);
 clearAllButton.addEventListener('click', clearAllList);
+itemInput.addEventListener('focus', onFocus);
 checkUI();
