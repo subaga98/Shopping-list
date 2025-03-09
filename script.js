@@ -6,12 +6,13 @@ const filter = document.getElementById('filter');
 
 function addItem(e) {
   e.preventDefault();
-  const newItem = itemInput.value;
+  let newItem = itemInput.value;
   //   Validate Input
   if (newItem === '') {
     alert('Please add an item');
     return;
   }
+  newItem = newItem[0].toUpperCase() + newItem.slice(1);
   //   Create list item
   const li = document.createElement('li');
   li.appendChild(document.createTextNode(newItem));
