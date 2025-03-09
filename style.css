@@ -134,7 +134,7 @@ header p {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  height: 330px;
+  max-height: 330px;
   overflow: auto;
 }
 
@@ -159,4 +159,20 @@ header p {
   .items li {
     width: 100%;
   }
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #012a4a;
+  width: 40px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e3f2fd;
+  border-radius: 10px;
 }
