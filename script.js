@@ -58,6 +58,7 @@ function getItemFromLocalStorage() {
   return itemFromLocalStorage;
 }
 
+// Remove each item from DOM
 function onClickClear(e) {
   const listButton = e.target.parentElement;
   if (listButton.classList.contains('remove-item')) {
@@ -67,14 +68,29 @@ function onClickClear(e) {
 
 function removeItem(item) {
   if (confirm('Are you sure?')) {
+    // Remove item from DOM
     item.remove();
+    // Remove item from local storage
+    removeItemFromLocalStorage(item.textContent);
     checkUI();
   }
 }
-
+// Remove each item from local storage
+function removeItemFromLocalStorage(item) {
+  let itemLocalStorage = getItemFromLocalStorage();
+  itemLocalStorage = itemLocalStorage.filter((i) => i !== item);
+  if (itemLocalStorage.length === 0) {
+    localStorage.removeItem('items');
+  } else {
+    localStorage.setItem('items', JSON.stringify(itemLocalStorage));
+  }
+}
 function clearAllList() {
+  // Remove all elements from DOM
   const items = itemList.querySelectorAll('li');
   items.forEach((item) => item.remove());
+  // Remove all elements from local storage
+  localStorage.removeItem('items');
   checkUI();
 }
 
