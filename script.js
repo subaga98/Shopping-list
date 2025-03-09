@@ -4,6 +4,13 @@ const itemList = document.getElementById('item-list');
 const clearAllButton = document.getElementById('clear');
 const filter = document.getElementById('filter');
 
+// On page reload display items from local storage to the DOM
+function displayItems() {
+  let itemLocalStorage = getItemFromLocalStorage();
+  itemLocalStorage.forEach((item) => addItemDOM(item));
+  checkUI();
+}
+
 function addItem(e) {
   e.preventDefault();
   let newItem = itemInput.value;
@@ -114,4 +121,5 @@ itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', onClickClear);
 clearAllButton.addEventListener('click', clearAllList);
 itemInput.addEventListener('focus', onFocus);
+document.addEventListener('DOMContentLoaded', displayItems);
 checkUI();
