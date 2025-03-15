@@ -20,7 +20,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: white;
 }
 
 header {
@@ -54,10 +54,6 @@ header p {
   border-radius: 20px;
 }
 
-.edit-mode {
-  color: #ccc;
-}
-
 /* Form & Input */
 .form-input {
   width: 100%;
@@ -79,6 +75,10 @@ header p {
   border-bottom: 1px solid #ccc;
   background: transparent;
   outline: none;
+}
+
+.update {
+  display: none;
 }
 
 /* Buttons */
@@ -148,7 +148,18 @@ header p {
   margin: 0 5px 20px;
   font-weight: 700;
   cursor: pointer;
-  color: white;
+}
+.edit-mode{
+  color: #ccc;
+}
+.items li:hover {
+  .update {
+    display: inline-flex;
+    transform: translate(0px);
+  }
+  .remove-item {
+    transform: translate(28px);
+  }
 }
 
 .form-input-filter::placeholder {
