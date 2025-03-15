@@ -151,6 +151,19 @@ function setItemToEdit(item) {
   itemInput.value = item.textContent;
 }
 
+function filterItem(e) {
+  const text = e.target.value.toLowerCase();
+  const items = itemList.querySelectorAll('li');
+  items.forEach((item) => {
+    const itemName = item.firstChild.textContent.toLowerCase();
+    if (itemName.indexOf(text) != -1) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
 function checkUI() {
   itemInput.value = '';
   const items = itemList.querySelectorAll('li');
@@ -176,4 +189,5 @@ itemList.addEventListener('click', onClickUpdate);
 clearAllButton.addEventListener('click', clearAllList);
 itemInput.addEventListener('focus', onFocus);
 document.addEventListener('DOMContentLoaded', displayItems);
+filter.addEventListener('input', filterItem);
 checkUI();

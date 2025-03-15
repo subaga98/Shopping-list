@@ -75,6 +75,7 @@ header p {
   border-bottom: 1px solid #ccc;
   background: transparent;
   outline: none;
+  color: white;
 }
 
 .update {
@@ -163,7 +164,7 @@ header p {
 }
 
 .form-input-filter::placeholder {
-  color: white;
+  color: #ccc;
 }
 
 @media (max-width: 500px) {
