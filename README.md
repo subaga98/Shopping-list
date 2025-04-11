@@ -1,4 +1,5 @@
-# Shopping List
+# Shopping List 
+Project link : https://subaga-shopping-list.netlify.app/
 - As the name says the aim of this project is to help the user create their own shopping list. 
 - The user can add, filter, update and delete/clear all the items on the list. 
 - This project was created to focus working on:
